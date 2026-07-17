@@ -25,7 +25,7 @@ layout: default
     {% for p in site.data.projects %}
     <li>
       <a class="proj-name" href="{{ p.repo }}">{{ p.name }}</a>
-      {% if p.demo %}<a class="proj-extra" href="{{ p.demo }}">demo</a>{% endif %}
+      {% if p.demo %}<a class="proj-extra" href="{{ p.demo }}">在线使用</a>{% endif %}
       <span class="proj-desc">{{ p.desc }}</span>
     </li>
     {% endfor %}
