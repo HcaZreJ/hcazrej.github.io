@@ -1,0 +1,17 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+vendor/
+.DS_Store
+
+# 本地工作文件，不进公开仓库
+.claude/
+_drafts/
+BACKLOG.md
+AGENTS.md
+CLAUDE.md
+PROJECT.md
+PATTERNS.md
+TECHSTACK.md
+DEVFLOW.md

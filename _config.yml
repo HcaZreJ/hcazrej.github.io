@@ -1,0 +1,32 @@
+title: Zach Zhu
+description: Zach Zhu 的个人主页。
+url: "https://hcazrej.github.io"
+lang: zh-CN
+
+permalink: /thoughts/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - PROJECT.md
+  - PATTERNS.md
+  - TECHSTACK.md
+  - DEVFLOW.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

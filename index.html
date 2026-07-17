@@ -1,0 +1,91 @@
+---
+layout: default
+---
+
+<header class="masthead">
+  <img class="avatar" src="{{ '/assets/site/avatar.jpg' | relative_url }}" alt="">
+  <div class="masthead-text">
+    <h1 class="name">Zach Zhu</h1>
+    <p class="tagline">写点0人在意的想法，汇总一下最近 vibe code 的小垃圾...</p>
+    <nav class="links">
+      <a href="https://github.com/HcaZreJ">GitHub</a><span class="sep">·</span>
+      <a href="mailto:hcazrej@gmail.com">Email</a>
+    </nav>
+  </div>
+</header>
+
+<section id="about">
+  <h2>关于我</h2>
+  <p>在做 AI 相关的工作，重度 Claude Code 用户。</br> 本科在 Minerva 读的 Data Science，硕士在 CMU MISM。</p>
+</section>
+
+<section id="projects">
+  <h2>vibe code 出来的一些小项目</h2>
+  <ul class="projects">
+    {% for p in site.data.projects %}
+    <li>
+      <a class="proj-name" href="{{ p.repo }}">{{ p.name }}</a>
+      {% if p.demo %}<a class="proj-extra" href="{{ p.demo }}">demo</a>{% endif %}
+      <span class="proj-desc">{{ p.desc }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% if site.posts.size > 0 %}
+<section id="thoughts">
+  <h2>想法</h2>
+  <ul class="thoughts">
+    {% for post in site.posts %}
+    <li>
+      <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section id="more" class="more">
+  <nav class="tabs"></nav>
+
+  <div class="panel" data-panel="music">
+    <h2 class="panel-title">最近在听</h2>
+    <p>（别声张，悄悄放上来的，趁着现在 0人在意）</p>
+    {% if site.data.music.size > 0 %}
+    {% for track in site.data.music %}
+    {% assign fname = track.file | split: "/" | last | split: "." | first %}
+    <div class="track" data-title="{{ track.title | default: fname }}{% if track.artist %} — {{ track.artist }}{% endif %}">
+      <audio preload="metadata" src="{{ track.file | relative_url }}"></audio>
+      <img class="track-cover" alt="">
+      <button class="track-play" aria-label="播放">▶</button>
+      <div class="track-body">
+        <p class="track-title"><span class="track-name">{{ track.title | default: fname }}</span> <span class="track-artist">{{ track.artist }}</span>
+          {% if track.link %}<a class="track-link" href="{{ track.link }}">网易云 ↗</a>{% endif %}</p>
+        <div class="track-bar"><div class="track-fill"></div></div>
+      </div>
+      <span class="track-time">0:00 / --:--</span>
+    </div>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+  </div>
+
+  <div class="panel" data-panel="reading">
+    <h2 class="panel-title">最近在读</h2>
+    {% if site.data.reading.size > 0 %}
+    <ul class="reading">
+      {% for book in site.data.reading %}
+      <li>
+        {% if book.link %}<a class="book-title" href="{{ book.link }}">{{ book.title }}</a>{% else %}<span class="book-title">{{ book.title }}</span>{% endif %}
+        {% if book.author %}<span class="book-author">{{ book.author }}</span>{% endif %}
+        {% if book.note %}<span class="book-note">{{ book.note }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    {% endif %}
+  </div>
+</section>
+
+<script src="{{ '/assets/site/main.js' | relative_url }}?v=6" defer></script>

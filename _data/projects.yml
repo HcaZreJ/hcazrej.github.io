@@ -1,0 +1,13 @@
+- name: trace-video-overlay
+  repo: https://github.com/HcaZreJ/trace-video-overlay
+  demo: https://hcazrej.github.io/trace-video-overlay/
+  desc: 把骑行轨迹变成 mp4 动画，方便在剪映里给骑行 vlog 角落贴一条会动的路线图。
+
+- name: trace-photo-overlay
+  repo: https://github.com/HcaZreJ/trace-photo-overlay
+  demo: https://hcazrej.github.io/trace-photo-overlay/
+  desc: 把骑行轨迹叠加到九张照片上面，方便发 小图是路线，大图是照片 的朋友圈九宫格。
+
+- name: Peeky
+  repo: https://github.com/HcaZreJ/Peeky
+  desc: 在 Mac 上秒开渲染好的 .json / .jsonl / .md，方便随手翻 AI 吐出来的大文件，不用等 IDE 卡半天。

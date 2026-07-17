@@ -1,0 +1,8 @@
+{
+  "name": "hcazrej-github-io",
+  "private": true,
+  "description": "assets/site/main.js 纯函数（ID3v2 解析等）的回归测试；站点本身零 JS 依赖、零构建步骤。",
+  "scripts": {
+    "test": "node --test test/main.test.js"
+  }
+}

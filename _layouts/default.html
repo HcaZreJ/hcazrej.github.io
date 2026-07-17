@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 120 }}">
+  <link rel="stylesheet" href="{{ '/assets/site/main.css' | relative_url }}?v=7">
+  {% feed_meta %}
+</head>
+<body>
+  <div class="container">
+    {{ content }}
+    <footer>
+      <p>© {{ site.time | date: "%Y" }} {{ site.title }} · 最后更新 {{ site.time | date: "%Y-%m" }}</p>
+    </footer>
+  </div>
+</body>
+</html>
